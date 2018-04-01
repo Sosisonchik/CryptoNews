@@ -1,0 +1,88 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.company.sosison.cryptonews.fragment.Ephyr">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/eth_con_view"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:src="@drawable/ethereum_icon"/>
+            <TextView
+                android:id="@+id/val_name_eth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ethereum"
+                android:layout_below="@+id/eth_con_view"
+                android:textSize="17sp"
+                android:layout_marginLeft="7dp"
+                />
+            <TextView
+                android:id="@+id/eth_price_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Push the button"
+                android:layout_toEndOf="@+id/eth_con_view"
+                android:layout_toRightOf="@+id/eth_con_view"
+                android:textSize="25sp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="20dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$"
+                android:textSize="25sp"
+                android:layout_toEndOf="@id/eth_price_view"
+                android:layout_alignBaseline="@id/eth_price_view"
+                android:layout_toRightOf="@id/eth_price_view" />
+            <TextView
+                android:id="@+id/eth_change_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bit_price_view"
+                android:layout_alignBaseline="@id/val_name_eth"
+                android:layout_marginLeft="99dp"
+                android:text="+34"
+                android:textSize="20sp"
+                android:layout_marginRight="8dp"
+                android:textColor="#2CB428"
+                android:layout_marginTop="20dp"/>
+            <TextView
+                android:id="@+id/date_eth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/eth_change_view"
+                android:layout_alignBaseline="@id/val_name_eth"
+                android:text="11 Фев."
+                android:layout_toRightOf="@+id/eth_change_view" />
+
+
+        </RelativeLayout>
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/darker_gray"/>
+    </LinearLayout>
+    <com.melnykov.fab.FloatingActionButton
+        android:id="@+id/fb_eth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_marginRight="18dp"
+        android:layout_marginBottom="18dp"
+        android:src="@drawable/ic_add"/>
+
+
+</FrameLayout>

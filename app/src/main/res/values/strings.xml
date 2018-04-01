@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Cryptonews</string>
+    <string name="name">CryptoNews</string>
+    <array name="langs">
+        <item>USD</item>
+        <item>RUB</item>
+    </array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="bitcoin">BitCoin</string>
+    <string name="test_price">16.000 $</string>
+    <string name="ethereum">Ethereum</string>
+    <string name="example_price">5000 $</string>
+</resources>
