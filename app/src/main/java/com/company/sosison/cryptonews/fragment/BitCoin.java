@@ -8,25 +8,30 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.company.sosison.cryptonews.R;
 import com.melnykov.fab.FloatingActionButton;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -44,12 +49,18 @@ import de.hdodenhof.circleimageview.CircleImageView;
  */
 public class BitCoin extends Fragment {
     static float price= 0.0f;
-    String json;
     SharedPreferences sp;
     final static String KEY_1 = "price_bit";
     final static String KEY_2 = "change_bit";
     final static String KEY_3 = "color_bit";
+    static final String URL1 = "https://newsapi.org/v2/everything?q=bitcoin&sortBy=publishedAt&apiKey=";
+    final static String API = "6a6670fe63144d08b80f42b521f83ecb";
     public static final String URLY = "https://yobit.net/api/2/btc_usd/ticker";
+    String author;
+    String description;
+    String title;
+    String imageUrl;
+    String postUrl;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -226,9 +237,12 @@ public class BitCoin extends Fragment {
             } catch (ParseException e) {
                 e.printStackTrace();
             }
+
             return null;
         }
     }
+
+
 
     private void save(String str,String str2,int color){
         sp = getActivity().getPreferences(Context.MODE_PRIVATE);
